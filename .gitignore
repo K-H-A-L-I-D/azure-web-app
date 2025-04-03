@@ -1,0 +1,20 @@
+# Ignore environment files
+.env
+
+# Ignore compiled files
+__pycache__/
+*.pyc
+
+# Ignore virtual environments
+venv/
+.venv/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore dependency files
+requirements.txt
+
+# Ignore environment files
+.env

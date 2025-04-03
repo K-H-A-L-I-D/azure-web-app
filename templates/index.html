@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Set the charset -->
+    <meta charset="utf-8" />
+    <!-- Metadata to tell the browser that this document is reponsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ name }} - Bootstrap Features Demo</title>
+    <!-- Include bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  </head>
+  <body>
+    <!-- FEATURE 1: Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <i class="bi bi-bootstrap-fill me-2"></i>Bootstrap Demo
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('signin') }}">Sign In</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main class="container">
+      <!-- Jinja templating greeting -->
+      <h1 class="text-center mb-4">Hello {{ name }}!</h1>
+      
+      <!-- FEATURE 2: Alert -->
+      <div class="alert alert-success alert-dismissible fade show mb-4" role="alert">
+        <strong>Welcome to Bootstrap!</strong> You're exploring 5 different Bootstrap features.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <!-- FEATURE 3: Grid system with columns -->
+      <div class="row mb-4">
+        <div class="col-md-4">
+          <div class="p-3 bg-light border rounded">
+            <h3>Column 1</h3>
+            <p>This is using Bootstrap's grid system. On medium screens and larger, this takes up 4 columns.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 bg-light border rounded">
+            <h3>Column 2</h3>
+            <p>On smaller screens, these columns will stack vertically for better mobile experience.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 bg-light border rounded">
+            <h3>Column 3</h3>
+            <p>Bootstrap's grid system is based on a 12-column layout. Each of these columns is 4/12 (or 1/3) of the width.</p>
+          </div>
+        </div>
+      </div>
+      <!-- FEATURE 4: Cards -->
+      <h2 class="mb-3">Feature Cards</h2>
+      <div class="row mb-4">
+        <div class="col-md-6 col-lg-3 mb-3">
+          <div class="card h-100">
+            <div class="card-header bg-primary text-white">
+              <i class="bi bi-grid-3x3-gap me-2"></i>Grid System
+            </div>
+            <div class="card-body">
+              <p class="card-text">Bootstrap's responsive grid uses a series of containers, rows, and columns to layout and align content.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-3">
+          <div class="card h-100">
+            <div class="card-header bg-success text-white">
+              <i class="bi bi-card-list me-2"></i>Cards
+            </div>
+            <div class="card-body">
+              <p class="card-text">Cards provide a flexible container for displaying content with options for headers, footers, and more.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-sm btn-outline-success">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-3">
+          <div class="card h-100">
+            <div class="card-header bg-info text-white">
+              <i class="bi bi-exclamation-triangle me-2"></i>Alerts
+            </div>
+            <div class="card-body">
+              <p class="card-text">Alerts provide contextual feedback messages for typical user actions with a handful of available styles.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-sm btn-outline-info">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-3">
+          <div class="card h-100">
+            <div class="card-header bg-warning text-dark">
+              <i class="bi bi-ui-checks me-2"></i>Forms
+            </div>
+            <div class="card-body">
+              <p class="card-text">Bootstrap's forms provide styles for all common HTML form elements with additional classes for layout.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-sm btn-outline-warning">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Original counter from your page -->
+      <div class="mb-4 p-4 bg-light rounded">
+        <h2>Counter Demo</h2>
+        <p>Click the button to increment the counter:</p>
+        <button id="incrementButton" class="btn btn-primary">
+          <i class="bi bi-plus-circle me-2"></i>Increment Counter
+        </button>
+        <p class="mt-2">Counter: <span id="counter" class="badge bg-secondary">0</span></p>
+      </div>
+      <!-- FEATURE 5: Form with Bootstrap styling -->
+      <div class="mb-4">
+        <h2>Contact Form</h2>
+        <form class="row g-3 needs-validation" novalidate>
+          <div class="col-md-6">
+            <label for="firstName" class="form-label">First name</label>
+            <input type="text" class="form-control" id="firstName" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please provide your first name.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="lastName" class="form-label">Last name</label>
+            <input type="text" class="form-control" id="lastName" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please provide your last name.
+            </div>
+          </div>
+          <div class="col-md-8">
+            <label for="email" class="form-label">Email</label>
+            <div class="input-group">
+              <span class="input-group-text">@</span>
+              <input type="email" class="form-control" id="email" required>
+              <div class="invalid-feedback">
+                Please provide a valid email.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="subject" class="form-label">Subject</label>
+            <select class="form-select" id="subject" required>
+              <option selected disabled value="">Choose...</option>
+              <option>Feature Request</option>
+              <option>Bug Report</option>
+              <option>General Inquiry</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a subject.
+            </div>
+          </div>
+          <div class="col-12">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="3" required></textarea>
+            <div class="invalid-feedback">
+              Please enter your message.
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="invalidCheck" required>
+              <label class="form-check-label" for="invalidCheck">
+                Agree to terms and conditions
+              </label>
+              <div class="invalid-feedback">
+                You must agree before submitting.
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-success" type="submit">
+              <i class="bi bi-send me-2"></i>Submit Form
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer class="bg-dark text-white py-4 mt-5">
+      <div class="container text-center">
+        <p>Created with Bootstrap 5 | <i class="bi bi-bootstrap me-1"></i> Demo Page</p>
+      </div>
+    </footer>
+    <!-- Bootstrap JavaScript Bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Original counter script -->
+    <script src="{{ url_for('static', filename='js/button.js') }}"></script>
+    <!-- Form validation script -->
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (() => {
+        'use strict'
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+          form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+          }, false)
+        })
+      })()
+    </script>
+  </body>
+</html>

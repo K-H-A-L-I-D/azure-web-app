@@ -1,0 +1,15 @@
+[project]
+name = "hello-frontend"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "bootstrap-flask>=2.4.1",
+    "dotenv>=0.9.9",
+    "flask>=3.1.0",
+    "flask-bcrypt>=1.0.1",
+    "flask-requests>=0.0.14",
+    "flask-restful>=0.3.10",
+    "pyodbc>=5.2.0",
+]
